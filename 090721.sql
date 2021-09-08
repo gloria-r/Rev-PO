@@ -1,3 +1,26 @@
+--SQL
+
+--Write an SQL Script to Seed Sample Data (attached below) and answer the below queries:
+--Employees list.xlsx
+
+--a) Write an SQL query to fetch worker names with salaries >= 50000 and <= 100000
+--b) Write an SQL query to fetch the no. of workers for each department in the descending order.
+--c) Write an SQL query to fetch intersecting records of two tables.
+--d) Write an SQL query to determine the 5th highest salary without using TOP or limit method.
+
+
+-- fetch some values
+SELECT first_name, last_name FROM worker WHERE salary BETWEEN 50000 AND 100000;
+
+SELECT COUNT (last_name) FROM worker GROUP BY department DESC;
+
+SELECT first_name, last_name FROM worker INTERSECT SELECT worker_title FROM title;
+
+SELECT MAX(salary) AS HighestSalary FROM worker;
+
+
+
+
 -- create tables
 CREATE TABLE worker (
   worker_id INTEGER PRIMARY KEY,
